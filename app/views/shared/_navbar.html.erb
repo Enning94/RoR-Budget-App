@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light nav-color py-3">
+  <div class="container">
+
+       <%= link_to "Back", user_groups_path(user_id: current_user.id), class: 'text-decoration-none navbar-toggler text-light'%>
+   
+    <div>
+
+    <% if current_page?(user_groups_path(user_id: current_user.id)) %>
+    <h2 class = "text-primary fs-6 text-light">TRANSACTIONS</h2>
+   
+
+<% elsif @group && current_page?(user_group_path(user_id: current_user.id, id: @group.id)) %>
+  <h2 class="text-primary fs-6 text-light">DETAILS</h2>
+<% end %>
+
+
+
+
+     </div>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-link navbar-toggler text-light" %>
+ 
+
+  
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+  <% if user_signed_in? %>
+  <header class="mb-8 py-4 shadow-md rounded-lg bg-blue-two-custom">
+    <nav class="flex justify-center items-center gap-1 md:gap-4 text-white">    
+      <p class="text-primary">Welcome <strong><%= current_user.name %></strong></p> | 
+      <%= link_to "Categories",user_groups_path(user_id: current_user.id), class: "navbar-link" %> |
+      <%= link_to "Edit profile", edit_user_registration_path, class: "navbar-link" %> |   
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-link" %>
+    </nav>
+  </header>
+<% end %>
+</div>
+  </div>
+</nav>
+

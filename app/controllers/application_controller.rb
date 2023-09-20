@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource_or_scope)
-    splashes_path # Change this to the path you want to redirect to after logout
-  end
+    splashes_path 
+    end
 end

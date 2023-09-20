@@ -1,10 +1,50 @@
+<%=render "shared/navbar"%>
 <p style="color: green"><%= notice %></p>
-
-<%= render @group %>
-
-<div>
-  <%= link_to "Edit this group", edit_group_path(@group) %> |
-  <%= link_to "Back to groups", groups_path %>
-
-  <%= button_to "Destroy this group", @group, method: :delete %>
+<div class = "m-4 bg-primary-subtle" >
+<div id="groups" class = "container-sm bg-light" >
+  <div class="row mb-4">
+    <div class="col-auto p-3">
+      <img class="img-thumbnail img-fluid" src="<%= @group.icon %>" alt="User Photo" style="max-width: 200px; max-height: 200px;">
+    </div>
+    <div class="col pt-5 text-start ">
+      <p class="fs-4 text-secondary"> <%= @group.name %> </p>
+    </div>
+    <div>
+      <p  class ="p-2">
+        The description of what the <%= @group.name%> category is about goes here with some item examples that fall under this category.
+        I will create a column for the category description in the database in the future-feature implementation.
+      </p>
+    </div>
+ <hr class ="mx-auto" style="width: 300px;">
+    <div>
+      <% if @group.entities.empty? %>
+        <p class="no-record text-center">
+          No transaction for this category.
+        </p>
+      <% end %>
+      <% if @group.entities.any? %>
+        <% @group.entities.each do |entity| %>
+          <p class="ps-2"><%=entity.id%>.<%=entity.name%></p>
+          <p class="ps-2 text-secondary"><%=entity.created_at.strftime("%d %b %Y at %I:%M%P")%></p>
+          <hr class="border border-1"><%end%>
+      <%end%>
+    </div>
+    <hr class ="mx-auto" style="width:300px;">
+    <div class= "d-flex justify-content-between">
+    <p>TOTAL PAYMENT</p>
+    <p><%=number_to_currency(@total_payment)%></p>
+    </div>
+     <div class = "btn-bg ">
+        <div class="add-btn p-3 text-center">
+          <%= link_to 'add a new transaction', new_user_group_entity_path(group_id: @group.id), class: 'btn text-light border px-5' %>
+        </div>
+    
+      </div>
 </div>
+</div>
+
+    <div>
+      <%= button_to "Destroy this group", user_group_path, method: :delete %>
+    </div>
+       
+   
