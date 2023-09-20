@@ -6,8 +6,6 @@ class Group < ApplicationRecord
   validates :name, presence: true
   validates :icon, presence: true
 
-
-
   def total_payment
     entities.sum(:amount)
   end

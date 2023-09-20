@@ -8,10 +8,10 @@ class GroupsController < ApplicationController
   end
 
   # GET /groups/1 or /groups/1.json
-  def show; 
-  @group = Group.includes(:entities).find(params[:id])
-  @total_payment = @group.entities.sum(:amount)
-  render :show
+  def show
+    @group = Group.includes(:entities).find(params[:id])
+    @total_payment = @group.entities.sum(:amount)
+    render :show
   end
 
   # GET /groups/new
@@ -22,9 +22,7 @@ class GroupsController < ApplicationController
   end
 
   # GET /groups/1/edit
-  def edit;
-  
-  end
+  def edit; end
 
   # POST /groups or /groups.json
   def create
