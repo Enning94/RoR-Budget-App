@@ -1,13 +1,24 @@
 
 /* Add this line to import Bootstrap styles */
-// @import '~bootstrap-icons/font/bootstrap-icons';
-
 @import 'bootstrap';
 
 
 
 h1{
     text-align: center;
+}
+
+.nav-color{
+background-color: #3778c2;
+}
+
+body{
+background-color:  #e3e6ea8f;
+}
+
+
+.btn-bg{
+    background-color: #5fb523;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
