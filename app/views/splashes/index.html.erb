@@ -1,0 +1,12 @@
+<div class=" flex flex-col justify-center items-center gap-8 px-4 pt-32">
+  <h1 class="font-bold text-3xl text-green-custom text-center">Welcome to CheckPocket!</h1>
+  <p class="text-center text-base">Get started by signing up or logging in.</p>
+  <div class="flex gap-8">
+  <div class='btn btn-primary'>
+  <%= link_to 'Sign up', new_user_registration_path%>
+  </div>
+  <div class='btn btn-secondary'>
+  <%= link_to 'Log in', new_user_session_path%>
+  </div>
+  </div>
+</div>
