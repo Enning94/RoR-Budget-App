@@ -1,4 +1,4 @@
-<%= form_with(model: entity) do |form| %>
+<%= form_with(model: entity, url: user_group_entities_path) do |form| %>
   <% if entity.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(entity.errors.count, "error") %> prohibited this entity from being saved:</h2>
@@ -11,7 +11,35 @@
     </div>
   <% end %>
 
+	<div class = "mt-2 p-2">
+		<%= form.text_field :name,
+        autofocus: true, 
+        autocomplete: 'name', 
+        placeholder: 'Name', 
+        class: 'form-control' 
+    %>
+    <% if entity.errors.any? %>
+        <p class="text-danger mb-0">
+          <%= entity.errors[:name].first %>
+        </p>
+    <% end %>
+	</div>
+
+
+  	<div class = "mt-2 p-2">
+		<%= form.text_field :amount,
+        autofocus: true, 
+        autocomplete: 'amount', 
+        placeholder: 'Amount', 
+        class: 'form-control' 
+    %>
+    <% if entity.errors.any? %>
+        <p class="text-danger mb-0">
+          <%= entity.errors[:amount].first %>
+        </p>
+    <% end %>
+	</div>
   <div>
-    <%= form.submit %>
+    <%= form.submit "Create transaction" %>
   </div>
 <% end %>

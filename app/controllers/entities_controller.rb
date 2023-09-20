@@ -3,7 +3,10 @@ class EntitiesController < ApplicationController
 
   # GET /entities or /entities.json
   def index
-    @entities = Entity.all
+
+    @user = current_user
+    @group = Group.find(params[:group_id])
+    @entities= @user.entities
   end
 
   # GET /entities/1 or /entities/1.json
@@ -11,19 +14,24 @@ class EntitiesController < ApplicationController
 
   # GET /entities/new
   def new
-    @entity = Entity.new
+    @user = current_user
+    @entity = @user.entities.new
+@group= Group.find(params[:group_id]) if params[:group_id].present?
   end
 
   # GET /entities/1/edit
   def edit; end
-
+  
   # POST /entities or /entities.json
   def create
-    @entity = Entity.new(entity_params)
+
+    @user = current_user
+    @entity = @user.entities.new(entity_params)
+    @entity.groups << Group.find(params[:group_id]) if params[:group_id].present?
 
     respond_to do |format|
       if @entity.save
-        format.html { redirect_to entity_url(@entity), notice: 'Entity was successfully created.' }
+        format.html { redirect_to user_group_path(user_id: @user.id, id: @entity.group_ids), notice: 'Entity was successfully created.' }
         format.json { render :show, status: :created, location: @entity }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -64,6 +72,8 @@ class EntitiesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def entity_params
-    params.fetch(:entity, {})
+   
+      params.require(:entity).permit(:name, :amount)
+
   end
 end
