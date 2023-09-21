@@ -1,8 +1,0 @@
-<div id="<%= dom_id entity %>">
-  <% @entities.each do |entity| %>
-    <%= render entity %>
-    <p>
-      <%= link_to "Show this entity", user_entities_path(user_id: @user.id, id: entity.id)%>
-    </p>
-  <% end %>
-</div>

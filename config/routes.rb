@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :splashes
-  root "groups#index"
 
+
+  root to: 'splashes#index' # Default root path for unauthenticated users
+
+  
   devise_for :users
     resources :users do
       resources :groups do

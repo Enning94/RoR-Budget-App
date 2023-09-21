@@ -11,4 +11,7 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(_resource_or_scope)
     splashes_path
   end
+  def after_sign_in_path_for(_resource_or_scope)
+    user_groups_path(user_id: current_user.id)
+  end
 end
