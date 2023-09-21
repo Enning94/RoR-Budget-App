@@ -1,12 +1,13 @@
-<div class=" flex flex-col justify-center items-center gap-8 px-4 pt-32">
-  <h1 class="font-bold text-3xl text-green-custom text-center">Welcome to CheckPocket!</h1>
-  <p class="text-center text-base">Get started by signing up or logging in.</p>
-  <div class="flex gap-8">
-  <div class='btn btn-primary'>
-  <%= link_to 'Sign up', new_user_registration_path%>
+ <%=render "splash_nav" %>
+<div class=" d-flex flex-column justify-content-between">
+  <h1 class="font-bold text-3xl text-green-custom text-center pt-5">Welcome to CheckPocket!</h1>
+  <p class="text-center text-base splash-page">Get started by signing up or logging in.</p>
+  <div class="d-flex flex-column gap-8 text-center splash-page">
+  <div class='btn nav-color btn-secondary'>
+  <%= link_to 'Log in', new_user_session_path, class:"text-light text-decoration-none"%>
   </div>
-  <div class='btn btn-secondary'>
-  <%= link_to 'Log in', new_user_session_path%>
+  <div class='btn '>
+  <%= link_to 'Sign up', new_user_registration_path, class:"text-secondary text-decoration-none"%>
   </div>
   </div>
 </div>

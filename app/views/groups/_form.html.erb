@@ -1,6 +1,6 @@
 
 
-
+<div class = "bg-light p-2">
 <%= form_with(model: group,  url: user_groups_path) do |form| %>
   <% if group.errors.any? %>
     <div style="color: red">
@@ -41,7 +41,9 @@
         </p>
     <% end %>
 	</div>
-  <div>
-    <%= form.submit %>
+
+  <div  class="add-btn p-3 text-center btn-bg">
+    <%= form.submit "Save", class: 'btn text-light border px-5'%>
   </div>
 <% end %>
+  </div>

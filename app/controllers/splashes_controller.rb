@@ -1,8 +1,11 @@
 class SplashesController < ApplicationController
   before_action :set_splash, only: %i[show edit update destroy]
-
+  # before_action :set_group_and_entity, only: [:index]
   # GET /splashes or /splashes.json
   def index
+    # @group = Group.find(params[:group_id]) if params[:group_id].present?
+    # @entity = Entity.find(params[:entity_id]) if params[:entity_id].present?
+
     # @splashes = Splash.all
   end
 

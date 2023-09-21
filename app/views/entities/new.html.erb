@@ -1,9 +1,4 @@
-<h1>New entity</h1>
-
+<%=render "shared/navbar"%>
+<div class = "col-auto container-sm m-3">
 <%= render "form", entity: @entity %>
-
-<br>
-
-<div>
-  <%= link_to "Back to entities", user_group_path(user_id: @entity.author_id, id: @group.id) %>
 </div>
