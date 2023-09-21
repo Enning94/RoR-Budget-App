@@ -55,7 +55,6 @@ class GroupsController < ApplicationController
 
   # DELETE /groups/1 or /groups/1.json
   def destroy
-    
     @group.destroy
 
     respond_to do |format|
