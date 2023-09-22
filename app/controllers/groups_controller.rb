@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
   def show
     @group = Group.includes(:entities).find(params[:id])
     @total_payment = @group.entities.sum(:amount)
-    @recent_entities = @group.recent_entities 
+    @recent_entities = @group.recent_entities
     render :show
   end
 
