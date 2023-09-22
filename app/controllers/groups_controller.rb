@@ -11,13 +11,13 @@ class GroupsController < ApplicationController
   def show
     @group = Group.includes(:entities).find(params[:id])
     @total_payment = @group.entities.sum(:amount)
+    @recent_entities = @group.recent_entities 
     render :show
   end
 
   # GET /groups/new
   def new
     @user = current_user
-
     @group = @user.groups.new
   end
 

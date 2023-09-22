@@ -4,7 +4,7 @@
 <div id="groups" class = "container-sm bg-light" >
   <div class="row mb-4">
     <div class="col-auto p-3">
-      <img class="img-thumbnail img-fluid" src="<%= @group.icon %>" alt="User Photo" style="max-width: 200px; max-height: 200px;">
+      <img class="img-thumbnail img-fluid" src="<%= @group.icon %>" alt="User Photo" style="max-width: 150px; max-height: 150px;">
     </div>
     <div class="col pt-5 text-start ">
       <p class="fs-4 text-secondary"> <%= @group.name %> </p>
@@ -13,21 +13,22 @@
       <p  class ="p-2">The <%= @group.name %> category enables users to efficiently manage their budget for <%= @group.name %> by allowing them to itemize their expenses and allocate budget amounts accordingly.
            </p>
     </div>
- <hr class ="mx-auto" style="width: 300px;">
+ <hr class ="mx-auto" style="width: 90%;">
     <div>
       <% if @group.entities.empty? %>
         <p class="no-record text-center">
           No transaction for this category.
         </p>
       <% end %>
-      <% if @group.entities.any? %>
-        <% @group.entities.each do |entity| %>
-          <p class="ps-2"><%=entity.id%>.<%=entity.name%></p>
-          <p class="ps-2 text-secondary"><%=entity.created_at.strftime("%d %b %Y at %I:%M%P")%></p>
-          <hr class="border border-1"><%end%>
-      <%end%>
+     <% if @recent_entities.any? %>
+  <% @recent_entities.each do |entity| %>
+    <p class="ps-2"><%= entity.name %></p>
+    <p class="ps-2 text-secondary"><%= entity.created_at.strftime("%d %b %Y at %I:%M%P") %></p>
+    <hr class="border border-1">
+  <% end %>
+<% end %>
     </div>
-    <hr class ="mx-auto" style="width:300px;">
+    <hr class ="mx-auto" style="width:90%;">
     <div class= "d-flex justify-content-between">
     <p>TOTAL PAYMENT</p>
     <p><%=number_to_currency(@total_payment)%></p>
