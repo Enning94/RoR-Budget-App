@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Entities', type: :request do
+RSpec.describe 'Expenses', type: :request do
   before do
     @user = FactoryBot.create(:user)
     sign_in @user
@@ -9,12 +9,12 @@ RSpec.describe 'Entities', type: :request do
 
   describe 'GET /index' do
     it 'returns http success' do
-      get user_group_entities_path(user_id: @user.id, group_id: @group.id)
+      get user_group_expenses_path(user_id: @user.id, group_id: @group.id)
       expect(response).to have_http_status(:success)
     end
 
     it 'correct template is rendered' do
-      get user_group_entities_path(user_id: @user.id, group_id: @group.id)
+      get user_group_expenses_path(user_id: @user.id, group_id: @group.id)
       expect(response).to render_template(:index)
     end
   end

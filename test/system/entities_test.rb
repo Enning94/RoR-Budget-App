@@ -1,39 +1,39 @@
 require 'application_system_test_case'
 
-class EntitiesTest < ApplicationSystemTestCase
+class ExpensesTest < ApplicationSystemTestCase
   setup do
-    @entity = entities(:one)
+    @expense = expenses(:one)
   end
 
   test 'visiting the index' do
-    visit entities_url
-    assert_selector 'h1', text: 'Entities'
+    visit expenses_url
+    assert_selector 'h1', text: 'Expenses'
   end
 
-  test 'should create entity' do
-    visit entities_url
-    click_on 'New entity'
+  test 'should create expense' do
+    visit expenses_url
+    click_on 'New expense'
 
-    click_on 'Create Entity'
+    click_on 'Create Expense '
 
-    assert_text 'Entity was successfully created'
+    assert_text 'Expense  was successfully created'
     click_on 'Back'
   end
 
-  test 'should update Entity' do
-    visit entity_url(@entity)
-    click_on 'Edit this entity', match: :first
+  test 'should update Expense ' do
+    visit expense_url(@expense)
+    click_on 'Edit this expense', match: :first
 
-    click_on 'Update Entity'
+    click_on 'Update Expense '
 
-    assert_text 'Entity was successfully updated'
+    assert_text 'Expense  was successfully updated'
     click_on 'Back'
   end
 
-  test 'should destroy Entity' do
-    visit entity_url(@entity)
-    click_on 'Destroy this entity', match: :first
+  test 'should destroy Expense ' do
+    visit expense_url(@expense)
+    click_on 'Destroy this expense', match: :first
 
-    assert_text 'Entity was successfully destroyed'
+    assert_text 'Expense  was successfully destroyed'
   end
 end

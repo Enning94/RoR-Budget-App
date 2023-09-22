@@ -12,9 +12,9 @@ RSpec.describe 'Group Views #show', type: :system do
 
     expect(page).to have_content('DETAILS')
     expect(page).to have_content(@group.name)
-    @group.entities.each do |entity|
-      expect(page).to have_content(entity.name)
-      expect(page).to have_content(entity.created_at.strftime('%d %b %Y at %I:%M%P'))
+    @group.expenses.each do |expense|
+      expect(page).to have_content(expense.name)
+      expect(page).to have_content(expense.created_at.strftime('%d %b %Y at %I:%M%P'))
     end
   end
 
@@ -23,6 +23,6 @@ RSpec.describe 'Group Views #show', type: :system do
     within('.transaction-set') do
       click_link 'add a new transaction'
     end
-    expect(page).to have_current_path(new_user_group_entity_path(user_id: @user.id, group_id: @group.id))
+    expect(page).to have_current_path(new_user_group_expense_path(user_id: @user.id, group_id: @group.id))
   end
 end

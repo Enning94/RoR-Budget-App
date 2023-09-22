@@ -16,15 +16,15 @@
     </div>
  <hr class ="mx-auto" style="width: 90%;">
     <div>
-      <% if @group.entities.empty? %>
+      <% if @group.expenses.empty? %>
         <p class="no-record text-center">
           No transaction for this category.
         </p>
       <% end %>
-     <% if @recent_entities.any? %>
-  <% @recent_entities.each do |entity| %>
-    <p class="ps-2"><%= entity.name %></p>
-    <p class="ps-2 text-secondary"><%= entity.created_at.strftime("%d %b %Y at %I:%M%P") %></p>
+     <% if @recent_expenses.any? %>
+  <% @recent_expenses.each do |expense| %>
+    <p class="ps-2"><%= expense.name %></p>
+    <p class="ps-2 text-secondary"><%= expense.created_at.strftime("%d %b %Y at %I:%M%P") %></p>
     <hr class="border border-1">
   <% end %>
 <% end %>
@@ -36,7 +36,7 @@
     </div>
      <div class = "btn-bg ">
         <div class="add-btn p-3 text-center">
-          <%= link_to 'add a new transaction', new_user_group_entity_path(group_id: @group.id), class: 'btn text-light border px-5' %>
+          <%= link_to 'add a new transaction', new_user_group_expense_path(group_id: @group.id), class: 'btn text-light border px-5' %>
         </div>
     
       </div>

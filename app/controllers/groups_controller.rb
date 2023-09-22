@@ -9,9 +9,9 @@ class GroupsController < ApplicationController
 
   # GET /groups/1 or /groups/1.json
   def show
-    @group = Group.includes(:entities).find(params[:id])
-    @total_payment = @group.entities.sum(:amount)
-    @recent_entities = @group.recent_entities
+    @group = Group.includes(:expenses).find(params[:id])
+    @total_payment = @group.expenses.sum(:amount)
+    @recent_expenses = @group.recent_expenses
     render :show
   end
 

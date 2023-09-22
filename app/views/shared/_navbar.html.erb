@@ -2,8 +2,8 @@
  <div class="container">
  <div>
  <%if user_signed_in?%>
-  <% if controller_name == 'entities' && action_name == 'new'%>
-    <%= link_to "Back", user_group_path(user_id: @entity.author_id, id: @group.id), class: 'text-decoration-none navbar-toggler text-light'%>
+  <% if controller_name == 'expenses' && action_name == 'new'%>
+    <%= link_to "Back", user_group_path(user_id: @expense.author_id, id: @group.id), class: 'text-decoration-none navbar-toggler text-light'%>
     <%else%>
     <%= link_to "Back", user_groups_path(user_id: current_user.id), class: 'text-decoration-none navbar-toggler text-light'%>
   <%end%>
@@ -16,7 +16,7 @@
         <h2 class="text-primary fs-6 text-light">DETAILS</h2>
       <% elsif controller_name == 'groups' && action_name == 'new' %>
         <h2 class="text-primary fs-6 text-light"> NEW CATEGORY</h2>
-      <% elsif controller_name == 'entities' && action_name == 'new' %>
+      <% elsif controller_name == 'expenses' && action_name == 'new' %>
         <h2 class="text-primary fs-6 text-light"> NEW TRANSACTION</h2>
       <% end %>
     </div>

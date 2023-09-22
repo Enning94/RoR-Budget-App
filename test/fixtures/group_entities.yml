@@ -2,8 +2,8 @@
 
 one:
   group: one
-  entity: one
+  expense: one
 
 two:
   group: two
-  entity: two
+  expense: two

@@ -1,48 +1,48 @@
 require 'test_helper'
 
-class EntitiesControllerTest < ActionDispatch::IntegrationTest
+class ExpensesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @entity = entities(:one)
+    @expense = expenses(:one)
   end
 
   test 'should get index' do
-    get entities_url
+    get expenses_url
     assert_response :success
   end
 
   test 'should get new' do
-    get new_entity_url
+    get new_expense_url
     assert_response :success
   end
 
-  test 'should create entity' do
-    assert_difference('Entity.count') do
-      post entities_url, params: { entity: {} }
+  test 'should create expense' do
+    assert_difference('Expense .count') do
+      post expenses_url, params: { expense: {} }
     end
 
-    assert_redirected_to entity_url(Entity.last)
+    assert_redirected_to expense_url(Expense.last)
   end
 
-  test 'should show entity' do
-    get entity_url(@entity)
+  test 'should show expense' do
+    get expense_url(@expense)
     assert_response :success
   end
 
   test 'should get edit' do
-    get edit_entity_url(@entity)
+    get edit_expense_url(@expense)
     assert_response :success
   end
 
-  test 'should update entity' do
-    patch entity_url(@entity), params: { entity: {} }
-    assert_redirected_to entity_url(@entity)
+  test 'should update expense' do
+    patch expense_url(@expense), params: { expense: {} }
+    assert_redirected_to expense_url(@expense)
   end
 
-  test 'should destroy entity' do
-    assert_difference('Entity.count', -1) do
-      delete entity_url(@entity)
+  test 'should destroy expense' do
+    assert_difference('Expense .count', -1) do
+      delete expense_url(@expense)
     end
 
-    assert_redirected_to entities_url
+    assert_redirected_to expenses_url
   end
 end
