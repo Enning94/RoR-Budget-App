@@ -1,10 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
-  let(:user) { create(:user) } # Use FactoryBot to create a user
-  let(:group) { create(:group, user: user) } # Use FactoryBot to create a group with a user association
-# subject {Group.new(user:, name: "category1", icon:  "kndsfknffdfndfdkndf")}
-# before{subject.save}
+  let(:user) { create(:user) }
+  let(:group) { create(:group, user:) }
+
   it 'is valid with valid attributes' do
     expect(group).to be_valid
   end
@@ -15,8 +14,8 @@ RSpec.describe Group, type: :model do
   end
 
   it 'is not valid with a name that already exists' do
-  group.save
-    group2 = build(:group, user: user) # Use build to create a new group without saving it
+    group.save
+    group2 = build(:group, user:)
     expect(group2).to_not be_valid
   end
 

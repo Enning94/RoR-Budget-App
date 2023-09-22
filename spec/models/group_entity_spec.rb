@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe GroupEntity, type: :model do
- 
   describe 'associations' do
     it 'belongs to recipe' do
       association = described_class.reflect_on_association(:group)

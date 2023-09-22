@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   user = User.new(name: 'John Doe', email: 'local@host2', password: '123456', password_confirmation: '123456')
   before { user.save }
 
@@ -38,5 +37,4 @@ RSpec.describe User, type: :model do
     user.password_confirmation = '1234569'
     expect(user).to be_valid
   end
-
-  end
+end
