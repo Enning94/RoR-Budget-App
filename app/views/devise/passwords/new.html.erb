@@ -1,0 +1,14 @@
+ <%=render "devise/shared/devise_nav" %>
+<div class = "col text-center">
+<div class = "  px-0 container-sm p-2">
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+<div class = "bg-light border border-secondary-subtle">
+  <div class=" p-2 ">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control bg-light form-control-lg" %>
+  </div>
+<% end %>
+</div>
+
+</div>
+</div>

@@ -1,0 +1,31 @@
+
+<div class = "col text-center ">
+<div class = "  px-0 container-sm">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+  <%= render "devise/shared/error_messages", resource: resource %>
+<div class = "bg-light border border-secondary-subtle">
+   <%=render "devise/shared/devise_nav"  %>
+  <div class=" p-2 ">
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"name",  class: "form-control bg-light  form-control-lg"  %>
+   </div>
+<hr>
+  <div class=" p-2">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email",  class: "form-control bg-light  form-control-lg"  %>
+  </div>
+  <hr>
+  <div class=" p-2 text-start">
+   <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password",  class: "form-control bg-light  form-control-lg"  %>
+</div>
+<hr>
+  <div class=" p-2">
+ <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirm Password",  class: "form-control bg-light  form-control-lg"  %>
+  </div>
+
+<% end %>
+
+</div>
+</div>

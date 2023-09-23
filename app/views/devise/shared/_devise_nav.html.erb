@@ -1,0 +1,22 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-light nav-color py-3">
+  <div class="container d-flex">
+      <%= link_to splashes_path, class: 'text-decoration-none text-light' do %>
+      <%= content_tag(:i, nil, class: 'bi bi-arrow-left fs-2') %>
+    <% end %>
+      <% if controller_name == 'sessions' && action_name == 'new' %>
+      <h2 class="text-primary fs-2 pt-3 text-light">LOGIN</h2>
+        <%= button_to "Log In", user_session_path, method: :post, class: "btn nav-color text-light fs-3 btn-lg" %>
+      <% elsif controller_name == 'registrations' && action_name == 'new' %>
+      <h2 class="text-primary fs-2 pt-3 text-light">REGISTER</h2>
+      <%= button_to "Next", user_registration_path(resource_name), method: :post, class: "btn nav-color text-light fs-3 btn-lg" %>
+
+      <% elsif controller_name == 'passwords' && action_name == 'new' %>
+      <h2 class="text-primary fs-2 pt-3 text-light">RESET PASSWORD</h2>
+     <%= button_to "Reset",  new_password_path(resource_name), method: :post, class: "btn nav-color text-light fs-3 btn-lg" %>
+      <% end %>  
+    </div>
+</nav>
+
+
