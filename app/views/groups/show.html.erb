@@ -23,8 +23,15 @@
       <% end %>
      <% if @recent_expenses.any? %>
   <% @recent_expenses.each do |expense| %>
+  <div class = "d-flex justify-content-between">
+    <div>
     <p class="ps-2"><%= expense.name %></p>
     <p class="ps-2 text-secondary"><%= expense.created_at.strftime("%d %b %Y at %I:%M%P") %></p>
+    </div>
+    <div>
+    <p class="ps-2"><%= number_to_currency(expense.amount)%></p>
+    </div>
+    </div>
     <hr class="border border-1">
   <% end %>
 <% end %>
