@@ -41,6 +41,11 @@
     <% end %>
 	</div>
 
+<div class="mt-2 p-2">
+<%= form.select :group_id, options_for_select(current_user.groups.pluck(:name, :id)), { prompt: "Select a Group" }, class: "form-control" %>
+</div>
+
+
   <div  class="add-btn p-3 text-center btn-bg">
     <%= form.submit "Save", class: 'btn text-light border px-5'%>
   </div>
