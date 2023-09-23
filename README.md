@@ -51,7 +51,19 @@ Budget App is a mobile web application designed for budget management. It allows
 - View Category, Transaction
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- LIVE DEMO -->
 
+## 🚀 Live Demo <a name="live-demo"></a>
+
+>Live Demo link to [Wallet_Expense_App](https://budget-app-q6uv.onrender.com)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Project Presentation Link <a name="live-demo"></a>
+
+>Link to presentation of [Wallet_Expense_App]()
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
