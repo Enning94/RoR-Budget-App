@@ -16,6 +16,7 @@ class ExpensesController < ApplicationController
   def new
     @user = current_user
     @expense = @user.expenses.new
+    @groups = current_user.groups
     @group = Group.find(params[:group_id]) if params[:group_id].present?
   end
 
@@ -26,7 +27,14 @@ class ExpensesController < ApplicationController
   def create
     @user = current_user
     @expense = @user.expenses.new(expense_params)
-    @expense.groups << Group.find(params[:group_id]) if params[:group_id].present?
+
+    if params[:expense][:group_id].present?
+      group = Group.find(params[:expense][:group_id])
+      @expense.groups << group
+    elsif params[:expense][:group_ids].present?
+      group_ids = params[:expense][:group_ids]
+      @expense.group_ids = group_ids
+    end
 
     respond_to do |format|
       if @expense.save
@@ -37,7 +45,6 @@ class ExpensesController < ApplicationController
         format.json { render :show, status: :created, location: @expense }
       else
         format.html { render :new, status: :unprocessable_entity }
-
       end
     end
   end
@@ -74,6 +81,6 @@ class ExpensesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def expense_params
-    params.require(:expense).permit(:name, :amount)
+    params.require(:expense).permit(:name, :amount, group_ids: [])
   end
 end

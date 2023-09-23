@@ -3,10 +3,15 @@
  <div>
  <%if user_signed_in?%>
   <% if controller_name == 'expenses' && action_name == 'new'%>
-    <%= link_to "Back", user_group_path(user_id: @expense.author_id, id: @group.id), class: 'text-decoration-none navbar-toggler text-light'%>
-    <%else%>
-    <%= link_to "Back", user_groups_path(user_id: current_user.id), class: 'text-decoration-none navbar-toggler text-light'%>
-  <%end%>
+     <%= link_to user_group_path(user_id: @expense.author_id, id: @group.id), class: 'text-decoration-none text-light' do %>
+      <%= content_tag(:i, nil, class: 'bi bi-arrow-left fs-2') %>
+    <% end %>
+   
+  <%else%>
+   <%= link_to user_groups_path(user_id: current_user.id), class: 'text-decoration-none text-light' do %>
+      <%= content_tag(:i, nil, class: 'bi bi-arrow-left fs-2') %>
+    <% end %>
+    <%end%>
   <%end%>
    </div>
     <div>
