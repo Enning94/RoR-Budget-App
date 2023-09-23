@@ -61,7 +61,7 @@ Budget App is a mobile web application designed for budget management. It allows
 
 ## 🚀 Project Presentation Link <a name="live-demo"></a>
 
->Link to presentation of [Wallet_Expense_App]()
+>Link to presentation of [Wallet_Expense_App](https://www.loom.com/share/58f2d5a5124d4a089c72b83167198fd7?sid=2d308bc2-49c8-40f2-8e7f-742bb51234bd)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
