@@ -51,7 +51,19 @@ Budget App is a mobile web application designed for budget management. It allows
 - View Category, Transaction
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- LIVE DEMO -->
 
+## 🚀 Live Demo <a name="live-demo"></a>
+
+>Live Demo link to [Wallet_Expense_App](https://budget-app-q6uv.onrender.com)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Project Presentation Link <a name="live-demo"></a>
+
+>Link to presentation of [Wallet_Expense_App](https://www.loom.com/share/58f2d5a5124d4a089c72b83167198fd7?sid=2d308bc2-49c8-40f2-8e7f-742bb51234bd)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -148,7 +160,7 @@ Feel free to check the [issues page](https://github.com/Enning94/RoR-Budget-App/
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 - I would like to thank Microverse for giving me the opportunity to work in this project.
-- I would like to thank [Gregoire Vella](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) for this [design on Behance](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=).
+- I would like to thank [Gregoire Vella](https://www.behance.net/gregoirevella) for this [design on Behance](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
