@@ -160,7 +160,7 @@ Feel free to check the [issues page](https://github.com/Enning94/RoR-Budget-App/
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 - I would like to thank Microverse for giving me the opportunity to work in this project.
-- I would like to thank [Gregoire Vella](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) for this [design on Behance](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=).
+- I would like to thank [Gregoire Vella](https://www.behance.net/gregoirevella) for this [design on Behance](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
