@@ -40,3 +40,6 @@
 
 #Ignore Node_Modules
 /node_modules
+
+#ignore .vscode
+/.vscode

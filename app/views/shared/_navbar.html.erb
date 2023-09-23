@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light nav-color py-3">
+ <div class="container">
+ <div>
+ <%if user_signed_in?%>
+  <% if controller_name == 'expenses' && action_name == 'new'%>
+    <%= link_to "Back", user_group_path(user_id: @expense.author_id, id: @group.id), class: 'text-decoration-none navbar-toggler text-light'%>
+    <%else%>
+    <%= link_to "Back", user_groups_path(user_id: current_user.id), class: 'text-decoration-none navbar-toggler text-light'%>
+  <%end%>
+  <%end%>
+   </div>
+    <div>
+      <% if current_page?(user_groups_path(user_id: current_user.id))%>
+        <h2 class="text-primary fs-6 text-light">TRANSACTIONS</h2>
+      <% elsif controller_name == 'groups' && action_name == 'show' %>
+        <h2 class="text-primary fs-6 text-light">DETAILS</h2>
+      <% elsif controller_name == 'groups' && action_name == 'new' %>
+        <h2 class="text-primary fs-6 text-light"> NEW CATEGORY</h2>
+      <% elsif controller_name == 'expenses' && action_name == 'new' %>
+        <h2 class="text-primary fs-6 text-light"> NEW TRANSACTION</h2>
+      <% end %>
+    </div>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-link navbar-toggler text-light" %>
+ 
+</div>
+
+<div class="collapse navbar-collapse" id="navbarNav">
+  <% if user_signed_in? %>
+  <header class="mb-8 py-4 shadow-md rounded-lg bg-blue-two-custom">
+    <nav class="d-flex  gap-5 md:gap-4 text-white"> 
+      <div>
+        <p class="text-primary text-decoration-none text-light">Welcome <strong><%= current_user.name %></strong></p>
+      </div>
+      <div>
+        <%= link_to "Categories", user_groups_path(user_id: current_user.id), class: "navbar-link text-decoration-none text-light" %>
+      </div>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-color  text-light" %>
+
+    </nav>
+  </header>
+  <% end %>
+</div>
+
+  </div>
+</nav>
+

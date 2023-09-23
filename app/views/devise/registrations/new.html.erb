@@ -1,30 +1,39 @@
-<h2>Sign up</h2>
-
+ <%=render "devise/shared/devise_nav" %>
+<div class = "col text-center ">
+<div class = "  px-0 container-sm">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"Name"  %>
+<div class = "bg-light border border-secondary-subtle">
+  <div class=" p-2 ">
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"Name",  class: "form-control bg-light  form-control-lg"  %>
+   </div>
+<hr>
+  <div class=" p-2">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email",  class: "form-control bg-light  form-control-lg"  %>
   </div>
-
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email"  %>
-  </div>
-
-  <div class="field">
-    <% if @minimum_password_length %>
+  <hr>
+  <div class=" p-2 text-start">
+   <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password"  %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password",  class: "form-control bg-light  form-control-lg"  %>
+</div>
+<hr>
+  <div class=" p-2">
+ <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirm Password",  class: "form-control bg-light  form-control-lg"  %>
   </div>
 
-  <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirm Password"  %>
+<div class="text-center">
+  
+ <div  class="add-btn p-3 text-center nav-color">
+     <%= f.submit "Sign up", class: 'btn text-light px-5'%>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
 <% end %>
+ <div  class="p-3 bg-tertiary text-ligth text-center border ">
+  <%= render "devise/shared/links"%>
+    </div>
+</div>
 
-<%= render "devise/shared/links" %>
+</div>
+</div>

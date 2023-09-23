@@ -14,22 +14,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_122712) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "entities", force: :cascade do |t|
+  create_table "expenses", force: :cascade do |t|
     t.string "name"
     t.decimal "amount"
     t.bigint "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_id"], name: "index_entities_on_author_id"
+    t.index ["author_id"], name: "index_expenses_on_author_id"
   end
 
-  create_table "group_entities", force: :cascade do |t|
+  create_table "group_expenses", force: :cascade do |t|
     t.bigint "group_id", null: false
-    t.bigint "entity_id", null: false
+    t.bigint "expense_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["entity_id"], name: "index_group_entities_on_entity_id"
-    t.index ["group_id"], name: "index_group_entities_on_group_id"
+    t.index ["expense_id"], name: "index_group_expenses_on_expense_id"
+    t.index ["group_id"], name: "index_group_expenses_on_group_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -54,8 +54,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_122712) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "entities", "users", column: "author_id"
-  add_foreign_key "group_entities", "entities"
-  add_foreign_key "group_entities", "groups"
+  add_foreign_key "expenses", "users", column: "author_id"
+  add_foreign_key "group_expenses", "expenses"
+  add_foreign_key "group_expenses", "groups"
   add_foreign_key "groups", "users"
 end

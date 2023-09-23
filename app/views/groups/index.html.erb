@@ -1,14 +1,41 @@
+ <%=render "shared/navbar"%>
+ <div class="container-set">
+ <div class= "bg-light d-flex justify-content-between p-2">
+ <p class ="text-secondary">Wallet-Ballance</p>
+ <p class ="text-secondary">$2800.0</p>
+
+ </div>
 <p style="color: green"><%= notice %></p>
 
-<h1>Categories</h1>
-
-<div id="groups">
+<div class = "m-3 bg-primary-subtle" >
+<div id="groups" class = "container-sm ">
+<div>
   <% @groups.each do |group| %>
-    <%= render group %>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
+    <div class="row border mb-4  bg-light">
+      <div class="col-auto p-2">
+        <img class="img-thumbnail img-fluid" src="<%= group.icon %>" alt="User Photo" style="max-width: 100px; max-height: 100px;">
+      </div>
+      <div class="col d-flex flex-column justify-content-between">
+        <%= link_to group.name, user_group_path(user_id: group.user_id, id: group.id), class: 'pt-3 text-decoration-none fs-4 link-secondary' %>
+         <p class="ps-2 text-secondary"><%=group.created_at.strftime("%d %b %Y")%></p>
+                        
+      </div>
+      <div class="col-auto p-2 pt-3 text-start">
+          <p><%=number_to_currency(group.total_payment)%></p>
+      </div>
+    </div>
+   
   <% end %>
+
+  </div>
+    </div>
+      </div>
+
+    <div class = "btn-bg p-2 ">
+        <div class="add-btn text-center p-2">
+          <%=link_to "add a new category", new_user_group_path(@user), class: 'btn text-light fs-5 border px-5'%>
+        </div>
+    </div>
 </div>
 
-<%= link_to "add a new category", new_user_group_path(@user) %>
+    

@@ -1,24 +1,32 @@
-<h2>Log in</h2>
-
+ <%=render "devise/shared/devise_nav" %>
+<div class = "col text-center ">
+<div class = "  px-0 container-sm">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+<div class = "bg-light border border-secondary-subtle">
+  <div class=" p-2 ">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control bg-light form-control-lg" %>
   </div>
-
-  <div class="field">
-    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
+<hr>
+  <div class=" p-2">
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" , class: "form-control bg-light  form-control-lg"%>
   </div>
-
+</div>
+<div class="text-center">
   <% if devise_mapping.rememberable? %>
-    <div class="field">
+    <div class="field p-2">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+ <div  class="add-btn p-3 text-center nav-color">
+     <%= f.submit "Log in", class: 'btn text-light  px-5'%>
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+<% end %>
+ <div  class="p-2text-center border ">
+  <%= render "devise/shared/links" %>
+    </div>
+</div>
+
+</div>
+</div>

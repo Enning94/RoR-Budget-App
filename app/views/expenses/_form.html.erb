@@ -1,0 +1,48 @@
+<div class = "bg-light p-2">
+<%= form_with(model: expense, url: user_group_expenses_path) do |form| %>
+  <% if expense.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+
+      <ul>
+        <% expense.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<div class = "mt-2 p-2">
+		<%= form.text_field :name,
+        autofocus: true, 
+        autocomplete: 'name', 
+        placeholder: 'Name', 
+        class: 'form-control' 
+    %>
+    <% if expense.errors.any? %>
+        <p class="text-danger mb-0">
+          <%= expense.errors[:name].first %>
+        </p>
+    <% end %>
+	</div>
+
+
+  	<div class = "mt-2 p-2">
+		<%= form.text_field :amount,
+        autofocus: true, 
+        autocomplete: 'amount', 
+        placeholder: 'Amount', 
+        class: 'form-control' 
+    %>
+    <% if expense.errors.any? %>
+        <p class="text-danger mb-0">
+          <%= expense.errors[:amount].first %>
+        </p>
+    <% end %>
+	</div>
+
+  <div  class="add-btn p-3 text-center btn-bg">
+    <%= form.submit "Save", class: 'btn text-light border px-5'%>
+  </div>
+<% end %>
+  </div>
